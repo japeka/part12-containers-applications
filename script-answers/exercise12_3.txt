@@ -1,0 +1,11 @@
+docker start -i focused_euclid
+cd usr/src/app
+apt-get update
+apt-get -y install nano
+nano index.js
+copy console.log('Hello World') to file
+Ctrl + O
+Yes to save index.js
+Ctrl + X
+
+
