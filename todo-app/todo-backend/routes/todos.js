@@ -1,6 +1,8 @@
 const express = require('express');
 const { Todo } = require('../mongo')
 const router = express.Router();
+const { getAsync, setAsync } = require('../redis')
+
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
@@ -14,7 +16,12 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     done: false
   })
-  res.send(todo);
+  if(todo) {
+    const added = await getAsync('added');
+    if(added) setAsync("added", +added + 1)
+    else setAsync("added", 1)
+  }
+res.send(todo);
 });
 
 const singleRouter = express.Router();
