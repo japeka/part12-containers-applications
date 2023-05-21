@@ -1,0 +1,35 @@
+
+commands
+> navigate to todo-app/todo-backend/
+> docker compose -f docker-compose.dev.yml up 
+> docker exec -it 7f bash
+> docker exec -it 7f mongosh -username root 
+> type in the password example
+
+> show dbs 
+<< 
+admin         100.00 KiB
+config         72.00 KiB
+local          72.00 KiB
+the_database   72.00 KiB
+
+> inside a container > use the_database
+
+> show collections
+<< todos
+
+> db.todos.find({})
+<< returns now 2 items in the todos collection
+
+> db.todos.insertOne({ text: 'Increase the number of tools in my toolbelt', done: false });
+<<
+{
+  acknowledged: true,
+  insertedId: ObjectId("646a037e17315bc23b194681")
+}
+
+> db.todos.find({})
+<< returns now 3 items in the todos collection
+
+> verified in both cli and express app that newly created item appeared in the listings
+
