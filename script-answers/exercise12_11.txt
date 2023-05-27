@@ -1,0 +1,12 @@
+docker exec -it 2ac194f14fff redis-cli
+type KEYS *
+"added"
+type GET added returns "4"
+SET added "9001" > GET "added" > 9001
+localhost:3000/statistics returns 9001 added_todos
+new todo added in postman
+GET "added" > 9002
+DEL "added"
+GET "added" > added_todos at localhost 0
+new todo added in postman
+GET "added" > 1
