@@ -1,1 +1,5 @@
- docker build . -t todo-frontend && docker run -p 3000:3000 todo-frontend
+docker build . -t todo-frontend && docker run -p 3000:3000 todo-frontend
+
+docker build -f ./dev.Dockerfile -t hello-front-dev .
+
+docker compose -f docker-compose.dev.yml up
