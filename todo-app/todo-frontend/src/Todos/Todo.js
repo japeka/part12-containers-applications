@@ -8,6 +8,7 @@ const Todo = ({todo,onClickDelete,onClickComplete})=> {
           </span>
         </>
       )
+      
 
       const notDoneInfo = (
         <>
