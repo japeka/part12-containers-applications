@@ -21,7 +21,7 @@ services:
                         - 3232:6379
                 container_name: redis
 
-        app:                    # The name of the service, can be anything
+        api:                    # The name of the service, can be anything
           image: todo-backend-dev  # Declares which image to use
           build:
             context: . 
