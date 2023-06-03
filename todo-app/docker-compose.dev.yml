@@ -1,6 +1,6 @@
 version: '1.0' 
 services:
-  #backend setup
+  #backend
   #mongo
   mongo:
     image: mongo
@@ -37,8 +37,7 @@ services:
       - mongo
       - redis
       
-  #frontend setup
-  #react-app
+  #frontend
   app:
     environment:
       - REACT_APP_BACKEND_URL=/api/
