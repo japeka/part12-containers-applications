@@ -28,7 +28,7 @@ services:
       context: ./todo-backend/
       dockerfile: dev.Dockerfile    
     volumes:
-      - ./todo-backend/.:/usr/src/app 
+      - ./todo-backend/:/usr/src/app 
     container_name: todo-backend
     environment: 
       - REDIS_URL=redis://redis:6379
@@ -47,7 +47,7 @@ services:
       context: ./todo-frontend/ 
       dockerfile: dev.Dockerfile 
     volumes:
-      - ./todo-frontend/.:/usr/src/app 
+      - ./todo-frontend/:/usr/src/app 
     container_name: todo-front-dev
 
   #nginx
